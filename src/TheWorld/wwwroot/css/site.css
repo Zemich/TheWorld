@@ -47,6 +47,10 @@ input[type=text], input[type=password], textarea {
             font-weight: bold;
         }
 
+        .menu li a {
+            color: #eee;
+        }
+
 #sidebar {
     background: #2a2c36;
     color: #eee;
@@ -55,8 +59,32 @@ input[type=text], input[type=password], textarea {
     width: 250px;
     overflow: hidden;
     left: 0;
+    -moz-transition: left ease .5s;
+    -o-transition: left ease .5s;
+    -webkit-transition: left ease .5s;
+    transition: left ease .5s;
 }
+
+    #sidebar.hide-sidebar {
+        left: -250px;
+        -moz-transition: left ease .5s;
+        -o-transition: left ease .5s;
+        -webkit-transition: left ease .5s;
+        transition: left ease .5s;
+    }
 
 #wrapper {
     margin: 0 0 0 250px;
+    -moz-transition: margin-left ease .5s;
+    -o-transition: margin-left ease .5s;
+    -webkit-transition: margin-left ease .5s;
+    transition: margin-left ease .5s;
 }
+
+    #wrapper.hide-sidebar {
+        margin-left: 0;
+        -moz-transition: margin-left ease .5s;
+        -o-transition: margin-left ease .5s;
+        -webkit-transition: margin-left ease .5s;
+        transition: margin-left ease .5s;
+    }
