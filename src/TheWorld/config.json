@@ -1,0 +1,5 @@
+{
+  "MailSettings": {
+    "ToAddress":  "ToConfigJson@mail.com"
+  }
+}
