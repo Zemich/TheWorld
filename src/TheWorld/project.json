@@ -13,10 +13,22 @@
     "Microsoft.AspNetCore.Mvc": "1.1.0",
     "Microsoft.AspNetCore.Mvc.TagHelpers": "1.1.0",
     "Microsoft.Extensions.Configuration.Json": "1.1.0",
-    "Microsoft.EntityFrameworkCore": "1.1.0"
+    "Microsoft.EntityFrameworkCore": "1.1.0",
+    "Microsoft.EntityFrameworkCore.SqlServer": "1.1.0",
+    "Microsoft.EntityFrameworkCore.Tools": {
+      "version": "1.1.0-preview4-final",
+      "type": "build"
+    }
   },
 
   "tools": {
+    "Microsoft.EntityFrameworkCore.Tools.DotNet": {
+      "version": "1.1.0-preview4-final",
+      "imports": [
+        "portable-net45+win8+dnxcore50",
+        "portable-net45+win8"
+      ]
+    }
   },
 
   "frameworks": {

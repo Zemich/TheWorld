@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using TheWorld.ViewModels;
 using TheWorld.Services;
 using Microsoft.Extensions.Configuration;
+using TheWorld.Models;
 
 namespace TheWorld.Controllers.Web
 {
@@ -14,16 +15,20 @@ namespace TheWorld.Controllers.Web
     {
         private IMailService _mailService;
         private IConfigurationRoot _config;
+        private IWorldRepository _repository;
 
-        public AppController(IMailService mailService, IConfigurationRoot config)
+        public AppController(IMailService mailService, IConfigurationRoot config, IWorldRepository repository)
         {
             _mailService = mailService;
             _config = config;
+            _repository = repository;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var data = _repository.GetAllTrips();
+
+            return View(data);
         }
 
         public IActionResult Contact()
