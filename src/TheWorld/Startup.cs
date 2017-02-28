@@ -51,6 +51,8 @@ namespace TheWorld
 
             services.AddScoped<IWorldRepository, WorldRepository>();
 
+            services.AddTransient<GeoCoordsService>();
+
             services.AddTransient<WorldContextSeedData>();
 
             services.AddLogging();

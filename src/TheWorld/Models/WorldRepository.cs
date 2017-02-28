@@ -27,7 +27,7 @@ namespace TheWorld.Models
             if (trip != null)
             {
                 trip.Stops.Add(newStop);
-                _context.Stops.Add(newStop);
+                //_context.Stops.Add(newStop); Not needed in 1.1.0
             }
         }
 
