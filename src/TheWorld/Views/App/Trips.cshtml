@@ -1,13 +1,23 @@
 ﻿@model IEnumerable<TheWorld.Models.Trip>
-@{ 
+@{
     ViewBag.Title = "Home Page";
 }
 @section Scripts {
     <script src="~/lib/angular/angular.min.js"></script>
+    <script src="~/js/app-trips.js"></script>
+    <script src="~/js/tripsController.js"></script>
 }
-<div class="row" ng-app="">
+<div class="row" ng-app="app-trips">
 
-    <div>{{ "Two plus two equals: " + (2+2) }}</div>
+    <div ng-controller="tripsController as vm" class="col-md-6 col-md-offset-3">
+        <table class="table table-responsive table-striped">
+            <tr ng-repeat="trip in vm.trips">
+                <td>{{ trip.name }}</td>
+                <td>{{ trip.created | date:'MM-dd-yyyy' }}</td>
+                <td><a href="#" class="btn btn-sm btn-primary">Manage</a></td>
+            </tr>
+        </table>
+    </div>
 
     <div class="col-md-6">
         <h1>The World</h1>
@@ -21,7 +31,7 @@
                 <label>Location</label>
                 <input class="form-control" type="text" />
             </div>
-            <div><input type="submit" value="Add" class="btn btn-success"/></div>
+            <div><input type="submit" value="Add" class="btn btn-success" /></div>
         </form>
     </div>
     <div class="col-md-6">
