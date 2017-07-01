@@ -48,6 +48,8 @@ namespace TheWorld
             else
             {
                 //Implement production mailservice
+                services.AddTransient<IMailService, DebugMailService>();
+
             }
 
             services.AddDbContext<WorldContext>();
@@ -87,7 +89,7 @@ namespace TheWorld
             {
                 if (_env.IsProduction())
                 {
-                    config.Filters.Add(new RequireHttpsAttribute());
+                    //config.Filters.Add(new RequireHttpsAttribute());
                 }
             })
             .AddJsonOptions(config =>
